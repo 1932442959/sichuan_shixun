@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasoft.mapper.UserMapper">
+	<select id="selectUserByPage" parameterType="map"
+		resultType="User">
+		select * from user
+		limit #{start},#{end};
+	</select>
+
+	<insert id="DynamicInsert" parameterType="User">
+		insert into user(<include refid="sql"></include>)
+		values(<include refid="values"></include>);
+	</insert>
+	<sql id="sql">
+		<trim suffixOverrides=",">
+			<if test="id!=null and id!=''">
+				id,
+			</if>
+			<if test="username!=null and username!=''">
+				username,
+			</if>
+			<if test="password!=null and password!=''">
+				password,
+			</if>
+			<if test="address!=null and address!=''">
+				address,
+			</if>
+			<if test="phone!=null and phone!=''">
+				phone,
+			</if>
+			<if test="c_id!=null and c_id!=''">
+				c_id
+			</if>
+		</trim>
+	</sql>
+	<sql id="values">
+		<trim suffixOverrides=",">
+			<if test="id!=null and id!=''">
+				#{id},
+			</if>
+			<if test="username!=null and username!=''">
+				#{username},
+			</if>
+			<if test="password!=null and password!=''">
+				#{password},
+			</if>
+			<if test="address!=null and address!=''">
+				#{address},
+			</if>
+			<if test="phone!=null and phone!=''">
+				#{phone},
+			</if>
+			<if test="c_id!=null and c_id!=''">
+				#{c_id}
+			</if>
+		</trim>
+	</sql>
+</mapper>
+

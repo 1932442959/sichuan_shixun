@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasoft.mapper.StudentMapper">
+  <!-- 多对一关联查询 -->
+  <!-- 嵌套查询 -->
+  <select id="SelectOneAll" resultMap="studentOneAll"
+	parameterType="int">
+	select * from student where c_id =#{c_id}
+  </select>
+  <resultMap type="student" id="studentOneAll">
+	<association property="gender" column="c_id"
+		select="selectOneGender" />
+  </resultMap>
+  <select id="selectOneGender" resultMap="GenderAll">
+	select * from gender
+	where id=#{c_id}
+  </select>
+  <resultMap type="gender" id="GenderAll">
+	<id column="id" property="id" />
+  </resultMap>
+</mapper>
+
