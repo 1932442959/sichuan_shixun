@@ -22,7 +22,7 @@ public class UserTest01 {
 
 	public static void main(String[] args) {
 		System.out.println("654321");
-
+		new UserTest01().selectOneGenderWithStudnet();
 	}
 
 	// 澶氬涓� 锛氭煡璇㈠涓鐢熷搴斾竴涓彮绾�
