@@ -22,9 +22,10 @@ public class UserTest01 {
 
 	public static void main(String[] args) {
 		System.out.println("654321");
+
 	}
 
-	// ¶à¶ÔÒ» £º²éÑ¯¶à¸öÑ§Éú¶ÔÓ¦Ò»¸ö°à¼¶
+	// æ¾¶æ°¬î‡®æ¶“ï¿½ é”›æ°­ç…¡ç’‡ãˆ î˜¿æ¶“î„î„Ÿé¢ç†·î‡®æ´æ–¾ç«´æ¶“î†å½®ç»¾ï¿½
 	@Test
 	public void selectOneStudentWithGender() {
 		SqlSession session = factory.openSession();
@@ -36,7 +37,7 @@ public class UserTest01 {
 		session.close();
 	}
 
-	// Ò»¶Ô¶à£º²éÑ¯Ò»¸ö°à¼¶¶ÔÓ¦¶à¸öÑ§Éú
+	// æ¶“ï¿½ç€µç‘°î˜¿é”›æ°­ç…¡ç’‡î­ç«´æ¶“î†å½®ç»¾Ñƒî‡®æ´æ–¿î˜¿æ¶“î„î„Ÿé¢ï¿½
 	@Test
 	public void selectOneGenderWithStudnet() {
 		SqlSession session = factory.openSession();
@@ -46,7 +47,7 @@ public class UserTest01 {
 		session.close();
 	}
 
-	// ·ÖÒ³²éÑ¯
+	// é’å—›ã€‰éŒãƒ¨î‡—
 	@Test
 	public void selectUserByPage() {
 		SqlSession session = factory.openSession();
@@ -61,7 +62,7 @@ public class UserTest01 {
 		session.close();
 	}
 
-	// ¶¯Ì¬Ìí¼ÓÓÃ»§
+	// é”ã„¦ï¿½ä½¹åŠé”çŠµæ•¤é´ï¿½
 	@Test
 	public void DynamicInsert() {
 		SqlSession session = factory.openSession();
