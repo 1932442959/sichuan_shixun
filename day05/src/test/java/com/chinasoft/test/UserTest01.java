@@ -21,7 +21,7 @@ public class UserTest01 {
 	public SqlSessionFactory factory = SessionUtil.getSession();
 
 	public static void main(String[] args) {
-		
+		System.out.println("654321");
 	}
 
 	// 多对一 ：查询多个学生对应一个班级
